@@ -707,6 +707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   speedMultiplier: 0
+  dashForce: {fileID: 11400000, guid: 58952d07a0f2b4d48b3ad8a1b47d9a99, type: 2}
 --- !u!50 &791763639
 Rigidbody2D:
   serializedVersion: 4
@@ -756,6 +757,7 @@ GameObject:
   - component: {fileID: 1157936197}
   - component: {fileID: 1157936200}
   - component: {fileID: 1157936199}
+  - component: {fileID: 1157936201}
   m_Layer: 0
   m_Name: PhaseWallRight
   m_TagString: Wall
@@ -877,6 +879,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1157936201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157936196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7943c8ac1da991f4eb629805712765d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1349348227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,6 +1036,7 @@ GameObject:
   - component: {fileID: 1848915191}
   - component: {fileID: 1848915190}
   - component: {fileID: 1848915189}
+  - component: {fileID: 1848915193}
   m_Layer: 0
   m_Name: PhaseWallLeft
   m_TagString: Wall
@@ -1143,6 +1158,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1848915193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848915188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7943c8ac1da991f4eb629805712765d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2097311700
 GameObject:
   m_ObjectHideFlags: 0

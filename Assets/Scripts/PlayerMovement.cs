@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,12 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     [SerializeField] private float speed;
     [SerializeField] private float speedMultiplier;
+    public static event Action<BoxCollider2D> TurnOnWall;
+    [SerializeField] WallDash dashForce;
     private bool canDash = true;
     void Start()
     {
+       
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
         speedMultiplier = 1;
@@ -38,13 +42,14 @@ public class PlayerMovement : MonoBehaviour
         //Speed Boosts
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            speedMultiplier = 2.5f;
+            speedMultiplier = dashForce.DashForce;
             //Wall Dash
+           
             if (hit.collider.gameObject.CompareTag("Wall") && canDash)
             {
                 Debug.Log(hit.collider.gameObject.name);
-
-                StartCoroutine(TurnWallOn(hit.collider.GetComponent<BoxCollider2D>()));
+                TurnOnWall.Invoke(hit.collider.gameObject.GetComponent<BoxCollider2D>());
+                //StartCoroutine(TurnWallOn(hit.collider.GetComponent<BoxCollider2D>()));
             }
         }
        
